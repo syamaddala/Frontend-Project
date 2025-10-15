@@ -1,0 +1,164 @@
+/* Main container */
+.tasks-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+.tasks-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 2rem;
+}
+
+.task-list-heading {
+  margin-top: 2.5rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+/* Task list styling */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+/* Each task item card */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #f0f0f0;
+  border-radius: 0.8rem;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  background: #fafafa;
+  transition: all 0.2s ease;
+}
+
+.task-item:hover {
+  background: #f3f8ff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Task info text */
+.task-info {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.task-info strong {
+  font-size: 1.1rem;
+  color: #111;
+}
+
+.task-info p {
+  color: #555;
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+/* Status label */
+.status {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status.completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* Task actions */
+.task-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.task-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Buttons */
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #0062cc;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Buttons inside TaskForm (for Update / Cancel spacing) */
+.task-form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+/* Empty message */
+.no-tasks {
+  text-align: center;
+  color: #777;
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .tasks-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 0.8rem;
+  }
+
+  .task-actions button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
