@@ -1,6 +1,21 @@
-import axios from "axios";
+import API from "./api";
 
-const API = "http://localhost:5000/api/v1/auth";
+// 🔹 Register user
+export const register = async (data) => {
+  const response = await API.post("/auth/register", data);
+  return response.data;
+};
 
-export const login = (data) => axios.post(`${API}/login`, data);
-export const register = (data) => axios.post(`${API}/register`, data);
+// 🔹 Login user
+export const login = async (data) => {
+  const response = await API.post("/auth/login", data);
+  if (response.data.token) {
+    localStorage.setItem("token", response.data.token);
+  }
+  return response.data;
+};
+
+// 🔹 Logout
+export const logout = () => {
+  localStorage.removeItem("token");
+};
