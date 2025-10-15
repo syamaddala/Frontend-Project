@@ -8,11 +8,11 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static build files
+// ✅ Serve static React build folder
 app.use(express.static(path.join(__dirname, "build")));
 
-// ✅ Use regex instead of "*"
-app.get(/.*/, (req, res) => {
+// ✅ Handle all other routes (regex-based)
+app.get(/^(?!\/api).*/, (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
