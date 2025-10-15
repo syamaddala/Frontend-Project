@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || "http://localhost:5000/api/v1",
+  baseURL: process.env.REACT_APP_API_URL || "https://backend-project-production-8a2e.up.railway.app/",
 });
 
 // ✅ Automatically attach JWT token
