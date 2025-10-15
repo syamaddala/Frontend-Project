@@ -1,5 +1,13 @@
-import API from './api';
-export const createTask = (t) => API.post('/tasks', t);
-export const getTasks = () => API.get('/tasks');
-export const updateTask = (id, t) => API.put(`/tasks/${id}`, t);
+import API from "./api";
+
+// 🔹 Create new task
+export const createTask = (taskData) => API.post("/tasks", taskData);
+
+// 🔹 Get all tasks
+export const getTasks = () => API.get("/tasks");
+
+// 🔹 Update task
+export const updateTask = (id, updatedData) => API.put(`/tasks/${id}`, updatedData);
+
+// 🔹 Delete task
 export const deleteTask = (id) => API.delete(`/tasks/${id}`);
